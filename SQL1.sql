@@ -28,4 +28,9 @@ PHONE_NUM INT DEFAULT '999999999'
 SELECT * 
 FROM Employee
 
+--Alter Table
+ALTER TABLE Employee 
+ADD GENDER CHAR(1)
+
+
 

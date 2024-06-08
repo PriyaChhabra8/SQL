@@ -59,6 +59,21 @@ ORDER BY CATEGORY, SALES DESC;
 SELECT DISTINCT *
 FROM TBL_ORDER
 
+--Q4: Display unique combination of CATEGORY and PRODUCT arranged in proper order.
+
+SELECT DISTINCT CATEGORY, PRODUCT
+FROM TBL_ORDER
+
+--Q5: Which orders are giving loss to the company?
+SELECT *
+FROM TBL_ORDER
+WHERE PROFIT < 0;
+
+--Q6: Which are the orders that belong to Technology category?
+SELECT *
+FROM TBL_ORDER
+WHERE CATEGORY = 'Technology';
+
 
 
 

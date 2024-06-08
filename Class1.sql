@@ -112,6 +112,17 @@ WHERE (PRODUCT = 'Tables' OR PRODUCT = 'Phones' OR PRODUCT = 'Appliances') ;
 SELECT REF_NO,ORD_DTE,SALES,CUST_NAME,PROFIT,CATEGORY
 FROM TBL_ORDER;
 
+--Q10: From which of the orders company has gained profit by selling Tables, Phones and Appliances?
+SELECT *
+FROM TBL_ORDER
+WHERE PRODUCT IN ('Tables','Phones','Applicanes') and PROFIT >0;
+
+-- Combining multiple conditions in brackets
+
+SELECT *
+FROM TBL_ORDER
+WHERE (PRODUCT ='Tables'AND PROFIT > 0) OR (PRODUCT ='Phones'AND PROFIT = 0);
+
 
 --Q10: From which of the orders company has gained profit by selling Tables, Phones and Appliances?
 SELECT *

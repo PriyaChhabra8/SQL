@@ -143,3 +143,24 @@ _ - one and only one character
 */
 
 
+--Q12: List orders which are placed by customers where customer name starts with 
+
+-- J 
+
+SELECT *
+FROM TBL_ORDER
+WHERE CUST_NAME LIKE 'J%';
+
+-- T 
+
+
+SELECT *
+FROM TBL_ORDER
+WHERE CUST_NAME LIKE 'T%';
+
+-- J or T
+
+SELECT *
+FROM TBL_ORDER
+WHERE CUST_NAME LIKE '[JT]%';
+

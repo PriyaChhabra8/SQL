@@ -74,6 +74,48 @@ SELECT *
 FROM TBL_ORDER
 WHERE CATEGORY = 'Technology';
 
+-- BODMAS (Brackets off Division Multiplication Addition Substraction)
 
+--Q7: Are there any orders from Technology, furniture category where products were sold at loss?
+
+--Method 1
+SELECT *
+FROM TBL_ORDER
+WHERE CATEGORY IN ('Technology','Furniture') AND PROFIT <0;
+
+--Method 2
+SELECT *
+FROM TBL_ORDER
+WHERE (CATEGORY = 'Technology' OR CATEGORY = 'Furniture' ) AND PROFIT <0;
+
+--Q8: Which are the orders where Tables, Phones and Appliances are sold?
+
+SELECT *
+FROM TBL_ORDER
+WHERE PRODUCT IN ('Tables', 'Phones', 'Appliances')
+
+-- aren't
+
+SELECT *
+FROM TBL_ORDER
+WHERE PRODUCT NOT IN ('Tables', 'Phones', 'Appliances');
+
+--  Translate above query using single valued comparison and Logical operator
+
+SELECT *
+FROM TBL_ORDER
+WHERE (PRODUCT = 'Tables' OR PRODUCT = 'Phones' OR PRODUCT = 'Appliances') ;
+
+
+--Q9: List all orders excluding TBL_ORDER product. [subsetting]
+
+SELECT REF_NO,ORD_DTE,SALES,CUST_NAME,PROFIT,CATEGORY
+FROM TBL_ORDER;
+
+
+--Q10: From which of the orders company has gained profit by selling Tables, Phones and Appliances?
+SELECT *
+FROM TBL_ORDER
+WHERE PRODUCT IN ('Tables','Phones','Applicanes') and PROFIT >0;
 
 

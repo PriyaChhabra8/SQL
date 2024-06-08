@@ -129,4 +129,17 @@ SELECT *
 FROM TBL_ORDER
 WHERE PRODUCT IN ('Tables','Phones','Applicanes') and PROFIT >0;
 
+--Q11: List all order details where sales are between 3000 and 5000.
+SELECT *
+FROM TBL_ORDER
+WHERE SALES BETWEEN 3000 AND 5000;
+
+/*
+Wild card operators - Will always be used along with LIKE operator
+% - 0 or more characters
+_ - one and only one character
+[] - Range of characters 
+
+*/
+
 

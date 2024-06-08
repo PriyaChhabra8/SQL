@@ -35,3 +35,30 @@ INSERT INTO TBL_ORDER VALUES
 ('US-2012-163825', '6/16/2012', 'Lena Creighton', 'Office Supplies', 'Binders', 3050.376, 1143.891), 
 ('CA-2012-114811', '11/8/2012', 'Keith Dawkins', 'Technology', 'Machines', 4643.8, 2229.024)
 
+---
+
+USE SQL_START;
+
+SELECT * FROM TBL_ORDER;
+
+
+--Q1: List all orders in ascending or descending order of SALES.
+
+SELECT *
+FROM TBL_ORDER
+ORDER BY SALES DESC
+
+--Q2: List all customers in ascending order of CATEGORY and descending order by SALES. - multi level sorting
+SELECT *
+FROM TBL_ORDER
+ORDER BY CATEGORY, SALES DESC;
+
+-- DISTINCT is an expensive operation - Duplicacy removal + Sorting by all the columns
+
+--Q3: Display only unique records from the order table.
+SELECT DISTINCT *
+FROM TBL_ORDER
+
+
+
+

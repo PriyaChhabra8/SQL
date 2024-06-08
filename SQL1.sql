@@ -38,7 +38,9 @@ DROP COLUMN Gender
 --Method 1
 
 INSERT INTO EMPLOYEE VALUES
-('Priya','Chhabra',110059,1234567890)
+('Priya','Chhabra',110059,1234567890),
+('Simi','Chhabra',110059,1234567890),
+('Riya','Stephen',110059,1234567890)
 
 --Method 2
 INSERT INTO Employee(LastName,First_NAME,PHONE_NUM,POSTCODE) VALUES
@@ -58,3 +60,14 @@ UPDATE Employee
 SET
 PHONE_NUM = 111111111
 
+--DELETE (Works on data inside the table)
+
+--Method 1
+DELETE FROM Employee
+WHERE First_NAME = 'Rebecca'
+
+--Method 2 - Will delete data of all rows
+DELETE FROM Employee
+
+--Truncate
+TRUNCATE TABLE EMPLOYEE

@@ -257,4 +257,7 @@ GROUP BY MONTH(ORD_DTE);
 
 --Q20: Are there any customers with duplicate reference number?
 
-
+SELECT REF_NO, COUNT(*) AS TOTAL_COUNT
+FROM TBL_ORDER
+GROUP BY REF_NO
+HAVING COUNT(*) > 1;

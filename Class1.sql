@@ -182,3 +182,55 @@ SELECT *
 FROM TBL_ORDER
 WHERE CUST_NAME LIKE '[JT]%D';
 
+--Q13: Orders where characters at 2nd and 3rd of cust_name positions are is 'ar'
+
+SELECT *
+FROM TBL_ORDER
+WHERE CUST_NAME LIKE '_%ar%'
+
+
+--Q14: Which are the Top 5 orders in terms of sales amount?
+
+SELECT TOP 5 *
+FROM TBL_ORDER
+ORDER BY SALES DESC;
+
+--Q15: Which are the bottom 25% orders in terms of profits?
+
+SELECT TOP 25 PERCENT*
+FROM TBL_ORDER
+ORDER BY PROFIT;
+
+
+--Q16: Display order details with appropiate header labels  - Alias Names
+-- e.g. Customer Name, Product category and Sales amount etc..
+
+SELECT
+REF_NO AS REFERENCE_NUMBER,
+ORD_DTE AS [ORDER DATE],
+CUST_NAME AS CUSTOMER_NAME,
+CATEGORY, PRODUCT,SALES,PROFIT
+FROM TBL_ORDER
+
+
+-- Odd case - distorted data
+
+SELECT 
+CATEGORY, PRODUCT
+FROM TBL_ORDER;
+
+/*
+Functions in SQL:
+
+Logical - CASE WHEN THEN
+Aggregation - SUM, MIN, MAX, AVG, COUNT, VAR, STDDEV
+Text - LEFT, RIGHT, MID|SUBSTR|SUBSTRING, UPPER, LOWER, PROPER|CAPITALIZE, LEN, STUFF, REPLACE, FIND, TRIM, RTRIM, LTRIM
+DateTime - YEAR, MONTH, DAY, HOUR, MIN, SECOND, NOW|TODAY|GETDATE, GETDATEPART, GETDATENAME, DATE, DATEDIFF, DATEADD
+Math - ROUND, FLOOR, CEIL|CEILING, POWER|POW, ABS
+Data type conversion - CAST, CONVERT
+Window Functions - 
+	a. Aggregation Window Function - SUM, MIN, MAX, AVG, COUNT
+	b. Ranking Window Function - ROW_NUMBER, DENSE_RANK, RANK
+	c. Value Window Function - LAG, LEAD
+*/
+

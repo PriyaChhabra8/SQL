@@ -75,3 +75,40 @@ COUNT(col_name):
 Counts the number of non-NULL values in the specified column.
 Excludes rows where the specified column has NULL values.
 Useful when you want to count non-NULL values in a specific column. */
+
+-- Application of Aggregation function with GROUP BY (Array Function)
+
+SELECT CATEGORY, PRODUCT,
+SUM(SALES) AS Total
+COUNT(*) AS TotalTrans
+FROM TBL_ORDER
+GROUP BY CATEGORY, PRODUCT;Sales,
+AVG(SALES) AS AverageSales,
+MIN(SALES) AS MinSales,
+MAX(SALES) AS MaxSales,
+
+-- Application of logical function
+
+SELECT *,
+CASE
+WHEN SALES >= 8000 THEN 'Premium Sales'
+WHEN SALES BETWEEN 4000 AND 8000 THEN 'High Sales'
+ELSE 'Low Sales'
+END AS SalesCategory
+FROM TBL_ORDER;
+
+
+SELECT *,
+CASE
+WHEN SALES >= 8000 THEN 'Premium Sales'
+WHEN SALES BETWEEN 4000 AND 8000 THEN 'High Sales'
+ELSE 'Low Sales'
+END AS SalesCategory,
+CASE
+WHEN PROFIT > 0 THEN 'Profit'
+WHEN PROFIT < 0 THEN 'Loss'
+ELSE 'At par'
+END AS ProfitCategory
+FROM TBL_ORDER;
+
+

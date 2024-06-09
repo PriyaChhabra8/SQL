@@ -234,3 +234,27 @@ Window Functions -
 	c. Value Window Function - LAG, LEAD
 */
 
+--Q17: Functions in SQL
+
+-- Applications of Date/Time functions
+
+--Q18: How many orders are placed for each category? Get the total sales amount as well.
+
+SELECT CATEGORY,
+COUNT(*) AS TOTAL_TRANSACTION,
+SUM(SALES) AS TOTAL_SALES
+FROM TBL_ORDER
+GROUP BY CATEGORY;
+
+
+--Q19: What is the monthly sales amount?
+
+SELECT MONTH(ORD_DTE) AS MONTH_,
+SUM(SALES) AS TOTAL_SALES
+FROM TBL_ORDER
+GROUP BY MONTH(ORD_DTE);
+
+
+--Q20: Are there any customers with duplicate reference number?
+
+

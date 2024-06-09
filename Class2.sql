@@ -111,4 +111,8 @@ ELSE 'At par'
 END AS ProfitCategory
 FROM TBL_ORDER;
 
+-- Get the transactions per sales category
+
+
+
 

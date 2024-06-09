@@ -47,4 +47,31 @@ Window Functions -
 	c. Value Window Function - LAG, LEAD
 */
 
+--Q17: Functions in SQL
 
+-- Application of Aggregation functions
+
+SELECT
+SUM(SALES) AS TotalSales,
+AVG(SALES) AS AvgSales,
+MIN(SALES) AS MinSales,
+COUNT(*) AS Totaltransaction,
+COUNT(SALES) AS  TOTALSALESTRANS
+FROM TBL_ORDER;
+
+
+-- Difference between COUNT(*) vs COUNT(Col_name)
+
+/*
+
+COUNT(*):
+
+Counts the total number of rows in a table, regardless of whether any specific column contains NULL values.
+It considers all rows, including those with NULL values.
+Useful when you want to count the total records in a table.
+
+COUNT(col_name):
+
+Counts the number of non-NULL values in the specified column.
+Excludes rows where the specified column has NULL values.
+Useful when you want to count non-NULL values in a specific column. */

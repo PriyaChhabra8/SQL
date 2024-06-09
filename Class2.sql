@@ -1,1 +1,50 @@
 
+/*
+Functions in SQL:
+
+Logical - CASE WHEN THEN
+
+Syntax -
+CASE
+WHEN Condition1 THEN Value1
+WHEN Condition2 THEN Value2
+...
+ELSE ValueN
+END AS Alias_Name
+
+Aggregation - SUM, MIN, MAX, AVG, COUNT, VAR, STDDEV [Point Estimates]
+Text - LEFT, RIGHT, MID|SUBSTR|SUBSTRING, UPPER, LOWER, PROPER|CAPITALIZE, LEN, STUFF, REPLACE, FIND|CHARINDEX, TRIM, RTRIM, LTRIM
+DateTime - YEAR, MONTH, DAY, HOUR, MIN, SECOND, NOW|TODAY|GETDATE, GETDATEFROMPART, DATE, DATEPART, DATENAME, DATEDIFF, DATEADD
+
+Datediff
+				Logical Diff		Datediff(year)
+1 Jan 2021		
+31 Dec 2021		365 days (1 year)	0 year
+1 Jan 2022		1 day(~0 year)		1 year
+
+Math - ROUND, FLOOR, CEIL|CEILING, POWER|POW, ABS
+Data type conversion - CAST, CONVERT
+
+Conversion are of 2 types:
+	1. Implicit conversion [System-defined] - It's unreliable
+	2. Explicit Conversion [User-defined] - Full control over the output. It's more preferred
+
+Order of execution in conversion function:
+
+String -> float -> int -> bool -- Can be doable based subject to condition
+	Note: 1. Only non standard numerics can be converted to numbers
+			Ex - '1234.5', '89.67'
+String <- float <- int <- bool -- Easily doable
+
+Data time format:
+
+	in format dates - mm/dd/yyyy HH:mm:ss| yyyy/mm/dd HH:mm:ss
+	display format - yyyy-mm-dd HH:mm:ss
+
+Window Functions - 
+	a. Aggregation Window Function - SUM, MIN, MAX, AVG, COUNT
+	b. Ranking Window Function - ROW_NUMBER, DENSE_RANK, RANK
+	c. Value Window Function - LAG, LEAD
+*/
+
+

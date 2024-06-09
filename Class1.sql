@@ -261,3 +261,51 @@ SELECT REF_NO, COUNT(*) AS TOTAL_COUNT
 FROM TBL_ORDER
 GROUP BY REF_NO
 HAVING COUNT(*) > 1;
+
+
+---
+/*What is count of customers buying perticular product in Technology and Furniture category 
+   in year 2011 and 2012. */
+
+SELECT REF_NO, COUNT(*) AS TOTAL_COUNT 
+FROM TBL_ORDER
+WHERE CATEGORY IN ('Technology','Furniture') AND YEAR(ORD_DTE) IN (2011,2012)
+GROUP BY REF_NO
+
+
+/*2. Get the maximum, minimum and average sales amount for each product along with customer 
+   count.*/
+
+SELECT
+PRODUCT,
+COUNT(*) AS CUSTOMER_COUNT,
+MAX(SALES) AS MAX_SALES,
+MIN(SALES) AS MIN_SALES,
+AVG(SALES)AS AVG_SALES
+FROM TBL_ORDER
+GROUP BY PRODUCT;
+
+--3. Display data for only those products which are bought by more than one customer.
+
+SELECT
+PRODUCT,
+COUNT(*) AS CUSTOMER_COUNT,
+MAX(SALES) AS MAX_SALES,
+MIN(SALES) AS MIN_SALES,
+AVG(SALES)AS AVG_SALES
+FROM TBL_ORDER
+GROUP BY PRODUCT
+HAVING  COUNT(DISTINCT REF_NO) >1;
+
+--Output should be arranged in descending order of customer count and average sales amount.
+
+SELECT
+    PRODUCT,
+    COUNT(DISTINCT REF_NO) AS CUSTOMER_COUNT,
+    MAX(SALES) AS MAX_SALES,
+    MIN(SALES) AS MIN_SALES,
+    AVG(SALES) AS AVG_SALES
+FROM TBL_ORDER
+GROUP BY PRODUCT
+HAVING COUNT(DISTINCT REF_NO) > 1
+ORDER BY CUSTOMER_COUNT DESC, AVG_SALES DESC;
